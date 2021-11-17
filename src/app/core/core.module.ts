@@ -11,6 +11,7 @@ const components = [NavbarComponent, FooterComponent]
   ],
   imports: [
     CommonModule
-  ]
+  ],
+  exports:[NavbarComponent,FooterComponent]
 })
 export class CoreModule { }
