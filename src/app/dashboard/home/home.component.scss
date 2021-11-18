@@ -22,25 +22,18 @@ main {
     line-height: 30px;
     color: $home-color;
 }
-
-.btn {
+button {
     border: 2px solid $orange-color;
-    padding: 8px 18px;
-}
-
-.btn:hover {
-    border: 2px solid $orange-hover;
-    transition: border 2s;
-}
-
-a {
-    text-decoration: none;
+    padding: 10px 20px;
     color: $orange-color;
     font-size: 15px;
+    background: white;
 }
 
-a:hover {
+button:hover {
     @include orange-hover;
+    border: 2px solid $orange-hover;
+    transition: border 2s;
 }
 
 .card-title {
