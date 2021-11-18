@@ -10,7 +10,7 @@ const components = [NavbarComponent, FooterComponent]
     ...components
   ],
   imports: [
-    CommonModule
+    CommonModule,   
   ],
   exports:[NavbarComponent,FooterComponent]
 })
