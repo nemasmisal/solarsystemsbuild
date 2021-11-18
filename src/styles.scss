@@ -71,6 +71,11 @@ body {
     color: $color;
 }
 
+@mixin orange-hover {
+    color: $orange-hover;
+    transition: color 2s;
+}
+
 @mixin mobile {
     @media (max-width: $mobile) {
         @content;
