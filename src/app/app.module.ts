@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
-import {DashboardModule} from './dashboard/dashboard.module';
-
+import { DashboardModule } from './dashboard/dashboard.module';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,9 +14,10 @@ import {DashboardModule} from './dashboard/dashboard.module';
     AppRoutingModule,
     CoreModule,
     SharedModule,
-    DashboardModule,   
+    DashboardModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

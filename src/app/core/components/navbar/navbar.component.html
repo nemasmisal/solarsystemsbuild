@@ -1,24 +1,35 @@
 <nav>
-  <section class="nav-section">
-    <h1 class="nav-header">Solar Systems Build<a href=""></a></h1>
+  <section class="nav-left">
+    <h1 class="nav-header">Solar Systems Build<a></a></h1>
+  </section>
+  <section class="nav-right">
     <ul class="nav-list">
-      <li class="list-items"><a href=""></a>Projects</li>
-      <li class="list-items"><a href=""></a>Services</li>
-      <li class="list-items"><a href=""></a>About Us</li>
-      <li class="list-items"><a href=""></a>Contacts</li>
-      <li class="list-items">
-        <div class="image-wrapper">
-          <img
-            src="../../../../assets/icons/icons8-menu.svg"
-            alt=""
-            width="50"
-          />
+      <li class="nav-list-items"><a></a>Projects</li>
+      <li class="nav-list-items"><a></a>Services</li>
+      <li class="nav-list-items"><a></a>About Us</li>
+      <li class="nav-list-items"><a></a>Contacts</li>
+    </ul>
+  </section>
+  <div class="overlay-mobile-menu" [ngClass]="{'checked': isMobileMenuOpen }">
+    <ul class="menu">
+      <li (click)="toggleMobileMenu()"><a class="home-btn" routerLink="/home">Homepage</a></li>
+      <li (click)="toggleMobileMenu()"><a>Link</a></li>
+      <li (click)="toggleMobileMenu()"><a>Link</a></li>
+      <li (click)="toggleMobileMenu()">
+        <div class="social">
+          <a><img src="assets/icons/instagram.svg" alt="Instagram Link"></a>
+          <a><img src="assets/icons/facebook.svg" alt="Facebook Link"></a>
+          <a><img src="assets/icons/twitter.svg" alt="Twitter Link"></a>
         </div>
       </li>
     </ul>
-  </section>
-  <section class="lending-section">
-    <h1 class="main-header">Solar Systems Build</h1>
-    <p>The energy of the future</p>
-  </section>
+  </div>
+  <div class="mobile">
+    <div class="menuToggle" (click)="toggleMobileMenu()">
+      <input type="checkbox" [checked]="isMobileMenuOpen">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
 </nav>
