@@ -2,13 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { FeatherModule } from 'angular-feather';
-import { ChevronUp} from 'angular-feather/icons';
-
-const icons = {
-  ChevronUp,
-}
-
 
 const components = [NavbarComponent, FooterComponent]
 
@@ -17,9 +10,8 @@ const components = [NavbarComponent, FooterComponent]
     ...components
   ],
   imports: [
-    CommonModule,
-    FeatherModule.pick(icons)
+    CommonModule,   
   ],
-  exports:[NavbarComponent,FooterComponent,FeatherModule]
+  exports:[NavbarComponent,FooterComponent]
 })
 export class CoreModule { }

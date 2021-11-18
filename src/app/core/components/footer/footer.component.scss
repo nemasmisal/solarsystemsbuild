@@ -1,91 +1,66 @@
-@import '../../../../variables';
+@import "../../../../variables";
+@import "../../../../styles.scss";
 
-
-footer{
-    background: $footer-background;
-    display: flex;
-    flex-direction: column;
-    height: 290px;  
-    font-family: Muli, italic;   
+footer {
+    @include flex(column,wrap,no,no);
+    background: $footer-background;   
+    height: 290px;
+    font-family: Muli, italic;
 }
 
-.footer-top{
-    height:40% ; 
+.footer-top {
+    height: 40%;
 }
 
-hr{
+hr {
     width: 60%;
     height: 1px;
-    border: 0.1 solid #354746;  
+    border: 0.1 solid #354746;
     margin: 0px auto;
 }
 
-.site-copyright{
-    color:$footer-color;
-   margin:60px auto;
-   text-align: center;
+.site-copyright {
+    color: $footer-color;
+    margin: 60px auto;
+    text-align: center;
 }
 
-.footer-middle{
+.footer-middle {
     height: 30%;
-    display: flex;    
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.nav-list{   
+.nav-list {
+    @include flex(row, wrap, space-around, center);  
     list-style: none;
-    display: flex;
-    flex-flow: row wrap;
     flex-basis: 30%;
-    justify-content:space-around;
 }
 
-a{
-   color: $orange-color;
-   text-decoration: none;
+a {
+    color: $orange-color;
+    text-decoration: none;
 }
 
-a:hover{
+a:hover {
     color: $orange-hover;
     transition: color 2s;
 }
 
-.powered-by{
+.powered-by {
     text-align: center;
     color: $footer-color;
     padding-top: 15px;
-
 }
 
-span{
-   color:$orange-color;
+span {
+    color: $orange-color;
 }
 
-span:hover{
-   color: $orange-hover;
-   transition: color 2s;
-}
-
-.chevron-up{
-    width: 50px;
-    height: 50px;
-    padding: 5px;
-    color:$orange-color;    
-}
-
-.chevron-up:hover{
+span:hover {
     color: $orange-hover;
     transition: color 2s;
 }
 
-.icon-wrapper{
-    background: #ffffff;
-    max-width: 50px;
-    height: 50px;
-    position: relative;
-    right: -1750px;
-    bottom: 60px;
-    
-}
 
