@@ -1,58 +1,54 @@
-@import '../../../../styles.scss';
-@import '../../../../variables';
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
+@import "../../../../styles.scss";
+@import "../../../../variables";
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap");
 
-img{
+img {
     max-width: 40px;
 }
 
-nav{
-    background-image: url('../../../../assets/img/Снимка\ от\ 2021-11-18\ 16-30-15.png');
-    background-size: cover; 
+nav {
+    background-image: url("../../../../assets/img/Снимка\ от\ 2021-11-18\ 16-30-15.png");
+    background-size: cover;
     height: 100vh;
     position: sticky;
     font-family: Muli, italic;
 }
 
-.nav-section{
-   @include flex(row,wrap,space-between,center);   
-   height: 100px; 
-   padding: 0px 40px;
+.nav-section {
+    @include flex(row, wrap, space-between, center);
+    height: 100px;
+    padding: 0px 40px;
 }
 
-
 .nav-list {
-    @include flex(row, wrap, space-around, center);  
+    @include flex(row, wrap, space-around, center);
     list-style: none;
     flex-basis: 30%;
 }
 
-.lending-section{  
-    @include flex(column, wrap, center, center);  
-    justify-content:end;
-    margin-top: 300px;     
+.lending-section {
+    @include flex(column, wrap, center, center);
+    justify-content: end;
+    margin-top: 300px;
 }
 
-.nav-header{
-    font-family: 'Playfair Display', serif;
+.nav-header {
+    font-family: "Playfair Display", serif;
     font-size: 25px;
 }
 
-.main-header{
+.main-header {
     font-size: 70px;
-    font-family: 'Playfair Display', serif;
+    font-family: "Playfair Display", serif;
     font-weight: bold;
 }
 
-p{
+p {
     margin-top: 20px;
 }
 
-h1,li,p{
+h1,
+li,
+p {
     color: $header-letters-color;
 }
-
-
-
-
-
