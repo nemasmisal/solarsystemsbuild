@@ -1,6 +1,6 @@
 <nav>
   <section class="nav-left">
-    <h1 class="nav-header">Solar Systems Build<a></a></h1>
+    <h1 class="nav-left-header">Solar Systems Build<a></a></h1>
   </section>
   <section class="nav-right">
     <ul class="nav-list">
@@ -10,23 +10,25 @@
       <li class="nav-list-items"><a></a>Contacts</li>
     </ul>
   </section>
-  <div class="overlay-mobile-menu" [ngClass]="{'checked': isMobileMenuOpen }">
+  <div class="overlay-mobile-menu" [ngClass]="{ checked: isMobileMenuOpen }">
     <ul class="menu">
-      <li (click)="toggleMobileMenu()"><a class="home-btn" routerLink="/home">Homepage</a></li>
+      <li (click)="toggleMobileMenu()">
+        <a class="home-btn" routerLink="/home">Homepage</a>
+      </li>
       <li (click)="toggleMobileMenu()"><a>Link</a></li>
       <li (click)="toggleMobileMenu()"><a>Link</a></li>
       <li (click)="toggleMobileMenu()">
         <div class="social">
-          <a><img src="assets/icons/instagram.svg" alt="Instagram Link"></a>
-          <a><img src="assets/icons/facebook.svg" alt="Facebook Link"></a>
-          <a><img src="assets/icons/twitter.svg" alt="Twitter Link"></a>
+          <a><img src="assets/icons/instagram.svg" alt="Instagram Link" /></a>
+          <a><img src="assets/icons/facebook.svg" alt="Facebook Link" /></a>
+          <a><img src="assets/icons/twitter.svg" alt="Twitter Link" /></a>
         </div>
       </li>
     </ul>
   </div>
   <div class="mobile">
     <div class="menuToggle" (click)="toggleMobileMenu()">
-      <input type="checkbox" [checked]="isMobileMenuOpen">
+      <input type="checkbox" [checked]="isMobileMenuOpen" />
       <span></span>
       <span></span>
       <span></span>
