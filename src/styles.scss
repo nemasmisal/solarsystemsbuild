@@ -26,7 +26,6 @@ body {
     nav {
         padding: 20px 30px;
         height: 100px;
-        // background: $footer-background; // TODO remove when image background applied
         background: #cfe2e4;
         @include flex(row, wrap, space-between, center);
 
@@ -39,6 +38,13 @@ body {
                 &-items {
                     display: inline;
                     margin-right: 50px;
+                    background: #cce8eb;
+                    border-radius: 3px;
+                    padding: 10px 20px;
+                }
+                &-items:hover {
+                    border: 0.1px solid $orange-hover;
+                    color: $orange-hover;
                 }
             }
         }
@@ -47,16 +53,23 @@ body {
             &-header {
                 font-family: "Playfair Display", serif;
                 font-weight: bold;
-                font-size: 23px;
-                border-radius: 10px;
-                background: #cae3e6;
-                padding: 20px 30px;
+                font-size: 20px;
+                border-radius: 5px;
+                background: #cce8eb;
+                padding: 10px 20px;
+                color: $footer-background;
+            }
+            &-header:hover {
+                color: $orange-hover;
+                background: #cce8eb;
             }
         }
-        h1 {
-            color: $footer-background;
-        }
     }
+}
+
+@mixin hover($color, $transition) {
+    color: $color;
+    transition: color $transition;
 }
 
 @mixin orange-hover {
@@ -64,7 +77,7 @@ body {
     transition: color 2s;
 }
 
-@mixin playfair-display-serif($font-size,$font-weight,$color) {
+@mixin playfair-display-serif($font-size, $font-weight, $color) {
     font-family: "Playfair Display", serif;
     font-size: $font-size;
     font-weight: $font-weight;
@@ -198,6 +211,46 @@ body {
         background: black;
         & .menu {
             transform: none;
+        }
+    }
+}
+
+@mixin home-component {
+    main {
+        @include flex(row, wrap, space-around, center);
+        padding: 0px 200px;
+        height: 450px;
+        background: #f3f7f6;
+        & .card {
+            background: white;
+            flex-basis: 40%;
+            height: 300px;
+            padding: 30px;
+            @include flex(row, wrap, start, center);
+            &-title {
+                font-family: "Playfair Display", serif;
+                font-weight: bold;
+            }
+            &-title:hover {
+                @include hover($orange-color, 2s);
+            }
+            &-text {
+                font-family: $muli-regular;
+                line-height: 30px;
+                color: $home-color;
+            }
+            &-button {
+                border: 2px solid $orange-color;
+                padding: 10px 20px;
+                color: $orange-color;
+                font-size: 15px;
+                background: white;
+            }
+            &-button:hover {
+                @include orange-hover;
+                border: 2px solid $orange-hover;
+                transition: border 2s;
+            }
         }
     }
 }
