@@ -3,6 +3,14 @@
 @import "../../../variables";
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap");
 
+
+.wrapper {
+    // max-width: 1280px;
+    max-width: 1280px;
+    margin: 0 auto;   
+    
+}
+
 main {
     @include flex(row, wrap, space-around, center);
     padding: 0px 200px;
