@@ -8,11 +8,10 @@ img {
 
 nav {
     background-image: url("../../../../assets/img/Снимка\ от\ 2021-11-18\ 16-30-15.png");
+    background-attachment: fixed;
     background-size: cover;
     height: 100vh;
-    position: sticky;
     font-family: Muli, italic;
-
     .nav-section {
         @include flex(row, wrap, space-between, center);
         height: 100px;
