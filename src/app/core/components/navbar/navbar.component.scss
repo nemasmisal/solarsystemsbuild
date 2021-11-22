@@ -49,9 +49,9 @@ p {
         right: 50px;
         z-index: 2;
         & .menuToggle {
-            display: block;
             position: relative;
             user-select: none;
+            @include flex(column, wrap, space-between, flex-end);
             input {
                 //hamburger
                 display: block;
@@ -81,8 +81,15 @@ p {
             }
             span {
                 // 3 lines
-                display: block;
                 width: 28px;
+                text-align: end;
+                &:nth-last-of-type(2) {
+                    width: 20px;
+                }
+                &:last-of-type {
+                    width: 12px;
+                }
+                display: block;
                 height: 3px;
                 margin-bottom: 5px;
                 position: relative;
