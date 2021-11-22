@@ -1,0 +1,46 @@
+@import "../../../styles.scss";
+@import "../../../variables";
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap");
+
+main {
+    @include flex(row, wrap, space-around, center);
+    padding: 0px 200px;
+    height: 450px;
+    background: #f3f7f6;
+}
+
+.card {
+    background: white;
+    flex-basis: 40%;
+    height: 300px;
+    padding: 30px;
+    @include flex(row, wrap, start, center);
+}
+
+.text-title {
+    font-family: Muli, regular;
+    line-height: 30px;
+    color: $home-color;
+}
+button {
+    border: 2px solid $orange-color;
+    padding: 10px 20px;
+    color: $orange-color;
+    font-size: 15px;
+    background: white;
+}
+
+button:hover {
+    @include orange-hover;
+    border: 2px solid $orange-hover;
+    transition: border 2s;
+}
+
+.card-title {
+    font-family: "Playfair Display", serif;
+    font-weight: bold;
+}
+
+.card-title:hover {
+    color: $orange-color;
+}
