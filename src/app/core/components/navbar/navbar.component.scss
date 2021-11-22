@@ -2,28 +2,9 @@
 @import "../../../../variables";
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap");
 
-nav {
-    padding: 20px 30px;
-    background: grey; // TODO remove when image background applied
-    @include flex(row, wrap, space-between, center);
-    .nav-right {
-        @include flex(row, wrap, space-between, center);
-        @include mobile {
-            display: none;
-        }
-        & .nav-list {
-            &-items {
-                display: inline;
-                margin-right: 5px;
-            }
-        }
-    }
-}
+@include main-nav;
+@include hamburger-menu-style;
 
-.nav-header {
-    font-family: "Playfair Display", serif;
-    font-size: 25px;
-}
 
 .main-header {
     font-size: 70px;

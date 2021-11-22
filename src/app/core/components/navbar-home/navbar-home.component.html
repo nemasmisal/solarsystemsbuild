@@ -1,16 +1,14 @@
 <nav>
-  <section class="nav-left">
-    <h1 class="nav-left-header">Solar Systems Build<a></a></h1>
-  </section>
-  <section class="nav-right">
+ 
+  <section class="nav-section">
+    <h1 class="nav-header">Solar Systems Build<a href=""></a></h1>
     <ul class="nav-list">
-      <li class="nav-list-items"><a></a>Projects</li>
-      <li class="nav-list-items"><a></a>Services</li>
-      <li class="nav-list-items"><a></a>About Us</li>
-      <li class="nav-list-items"><a></a>Contacts</li>
+      <li class="nav-list-items"><a href=""></a>Projects</li>
+      <li class="nav-list-items"><a href=""></a>Services</li>
+      <li class="nav-list-items"><a href=""></a>About Us</li>
+      <li class="nav-list-items"><a href=""></a>Contacts</li>           
     </ul>
-  </section>
-  <div class="overlay-mobile-menu" [ngClass]="{ checked: isMobileMenuOpen }">
+     <div class="overlay-mobile-menu" [ngClass]="{ checked: isMobileMenuOpen }">
     <ul class="menu">
       <li (click)="toggleMobileMenu()">
         <a class="home-btn" routerLink="/home">Homepage</a>
@@ -34,4 +32,13 @@
       <span></span>
     </div>
   </div>
+
+
+  </section>
+   
+  <section class="lending-section parallax">
+    <h1 class="lending-section-header">Solar Systems Build</h1>
+    <p class="lending-section-text">The energy of the future</p>
+  </section>
+
 </nav>
