@@ -1,15 +1,15 @@
-
 @import "../../../../variables";
 @import "../../../../styles.scss";
 
 footer {
-    @include flex(column, wrap, no, no);
+    @include flex(column, wrap, center, center);
     background: $footer-background;
     height: 290px;
     font-family: Muli, italic;
+    padding-bottom: 20px;
 }
 
-.footer-top {
+.header {
     height: 40%;
 }
 
@@ -26,7 +26,7 @@ hr {
     text-align: center;
 }
 
-.footer-middle {
+.links {
     height: 30%;
     display: flex;
     justify-content: center;
@@ -36,28 +36,28 @@ hr {
 .nav-list {
     @include flex(row, wrap, space-around, center);
     list-style: none;
-    flex-basis: 30%;
+    li {
+        margin-right: 10px;
+    }
 }
 
 a {
     color: $orange-color;
     text-decoration: none;
-}
-
-a:hover {
-    @include orange-hover;
+    &:hover {
+        @include orange-hover;
+    }
 }
 
 .powered-by {
+    cursor: pointer;
     text-align: center;
     color: $footer-color;
-    padding-top: 15px;
-}
-
-span {
-    color: $orange-color;
-}
-
-span:hover {
-    @include orange-hover;
+    padding: 15px 0;
+    span {
+        color: $orange-color;
+        &:hover {
+            @include orange-hover;
+        }
+    }
 }
