@@ -2,7 +2,55 @@
 @import "../../../variables";
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap");
 
-
-@include home-component;
-
-
+.main {
+    height: 800px;
+}
+.header {
+    text-align: center;
+    color: white;
+    h1 {
+        font-size: clamp(2.5em, 5vw, 5em);
+    }
+}
+.articles {
+    background: #f3f7f6;
+    width: 100%;
+    height: 400px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    @include flex(row, wrap, space-evenly, center);
+}
+.card {
+    background: white;
+    flex-basis: 40%;
+    height: 300px;
+    padding: 30px;
+    @include flex(row, wrap, flex-start, center);
+    &-title {
+        font-family: "Playfair Display", serif;
+        font-weight: bold;
+        cursor: pointer;
+        &:hover {
+            @include hover($orange-color, 2s);
+        }
+    }
+    &-content {
+        font-family: $muli-regular;
+        line-height: 30px;
+        color: $home-color;
+    }
+    &-button {
+        border: 2px solid $orange-color;
+        padding: 10px 20px;
+        color: $orange-color;
+        font-size: 15px;
+        background: white;
+        cursor: pointer;
+        &:hover {
+            @include orange-hover;
+            border: 2px solid $orange-hover;
+            transition: border 2s;
+        }
+    }
+}
