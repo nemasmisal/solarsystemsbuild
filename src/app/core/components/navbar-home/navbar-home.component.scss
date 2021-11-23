@@ -2,10 +2,6 @@
 @import "../../../../variables";
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap");
 
-img {
-    max-width: 40px;
-}
-
 nav {
     background-image: url("../../../../assets/img/Снимка\ от\ 2021-11-18\ 16-30-15.png");
     background-attachment: fixed;
@@ -51,4 +47,18 @@ nav {
             color: $header-letters-color;
         }
     }
+    .icon-section{
+        
+        width: 40px;
+        position: relative;
+        left: 900px;
+        top: 300px;
+       
+        img{
+            max-width: 100%;
+            
+        }
+
+    }
+
 }
