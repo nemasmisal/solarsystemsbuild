@@ -6,6 +6,7 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { CommonModule } from '@angular/common';
+import {AuthModule} from './auth/auth.module'
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,7 +16,8 @@ import { CommonModule } from '@angular/common';
     CoreModule,
     SharedModule,
     DashboardModule,
-    CommonModule
+    CommonModule,
+    AuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

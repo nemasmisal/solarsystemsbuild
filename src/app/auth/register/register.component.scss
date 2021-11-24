@@ -1,0 +1,76 @@
+@import "../../../styles.scss";
+@import "../../../variables";
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap");
+
+.main {
+    height: 800px;
+}
+.header {
+    text-align: center;
+    color: white;
+    h1 {
+        font-size: clamp(1.5em, 3vw, 5em);
+    }
+}
+
+.form-title {
+    max-width: 200px;
+    text-align: center;
+    padding: 5px 15px;
+    position: relative;
+    color: $footer-background;
+    top: 115px;
+    left: 613px;
+    font-size: 32px;
+}
+
+.form-wrapper {
+    background: lavender;
+    width: 1450px;
+    height: 600px;
+    @include flex(row, wrap, center, center);
+    form {
+        border: 0.5px solid $footer-background;
+        border-radius: 5px;
+        padding: 40px;
+        padding-bottom: 10px;
+        .form-input {
+            position: relative;
+            label {
+                background: $footer-background;
+                border-radius: 5px;
+                padding: 0px 10px;
+                position: absolute;
+                bottom: 71px;
+                left: 17px;
+                color: white;
+            }
+            & input {
+                background: transparent;
+                border: 0.5px solid $footer-background;
+                width: 490px;
+                height: 52px;
+                margin-bottom: 30px;
+                border-radius: 5px;
+                &:hover {
+                    border: none;
+                    border-radius: 0px;
+                    border-bottom: 0.5px solid $footer-background;
+                }
+            }
+            #region {
+                margin-top: 30px;
+            }
+        }
+        .submit {
+            text-align: center;
+            color: white;
+            font-size: 18px;
+            background: $footer-background;
+            border: none;
+            height: 45px;
+            width: 490px;
+            margin-bottom: 20px;
+        }
+    }
+}
