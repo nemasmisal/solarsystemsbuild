@@ -46,6 +46,7 @@
                 color: white;
             }
             & input {
+                outline: none;               
                 background: transparent;
                 border: 0.5px solid $footer-background;
                 width: 490px;
