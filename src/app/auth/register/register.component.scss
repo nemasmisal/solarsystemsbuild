@@ -11,6 +11,7 @@
     h1 {
         font-size: clamp(1.5em, 3vw, 5em);
     }
+   
 }
 
 .form-title {
@@ -44,9 +45,18 @@
                 bottom: 71px;
                 left: 17px;
                 color: white;
-            }
+            }          
+            select {
+                margin-top: 30px;
+                background: transparent;
+                border: 0.5px solid $footer-background;
+                width: 490px;
+                height: 52px;
+                margin-bottom: 30px;
+                border-radius: 5px;
+            }         
             & input {
-                outline: none;               
+                outline: none;
                 background: transparent;
                 border: 0.5px solid $footer-background;
                 width: 490px;
@@ -57,10 +67,7 @@
                     border: none;
                     border-radius: 0px;
                     border-bottom: 0.5px solid $footer-background;
-                }
-            }
-            #region {
-                margin-top: 30px;
+                }               
             }
         }
         .submit {
@@ -75,3 +82,5 @@
         }
     }
 }
+
+
