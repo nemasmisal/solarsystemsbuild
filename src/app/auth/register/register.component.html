@@ -4,30 +4,42 @@
     <p class="lending-section-text">The energy of the future</p>
   </div>
   <div class="form-title">Sign up</div>
-  
+
   <div class="form-wrapper">
-    <form action="" method="post">
+    <form  [formGroup]="form" (submit)="register()" >
       <div class="form-input">
-       <label for="">Region</label>       
-        <select name="" id="">
+        <label for="region">Region</label>
+        <select formControlName="region">
           <option value="select region"></option>
           <option value="">EU</option>
           <option value="">US</option>
-        </select>
+        </select>        
       </div>
       <div class="form-input">
-        <label for="">Email</label>
-        <input type="text" />       
-      </div>     
-      <div class="form-input">
-        <label for="">Password</label>
-        <input class="warning" type="text" />
+        <label for="email">Email</label>
+        <input type="text" formControlName="email" />
+        <p *ngIf="f.email?.touched">
+          <span [ngClass]="{'uppercaseError':!email.errors?.uppercaseError}" class="uppercase" >must contain at least one uppercase letter, </span >
+          <span [ngClass]="{'lowercaseError':!email.errors?.lowercaseError}" class="lowercase">lowercase letter, </span>
+          <span class="spcial-symbol">special symbol, </span>
+          <span class="digit"> digit.</span>
+        </p>
       </div>
       <div class="form-input">
-         <label for="">Confirm password</label>
-        <input type="text" />
+        <label for="password">Password</label>
+        <input class="warning" type="text" formControlName="password" />
+        <p *ngIf="password?.dirty">
+          <span  [ngClass]="{'uppercaseError':!password.errors?.uppercaseError}" class="uppercase" >must contain at least one uppercase letter, </span >
+          <span [ngClass]="{'lowercaseError':!password.errors?.lowercaseError}" class="lowercase">lowercase letter, </span>
+          <span class="spcial-symbol">special symbol, </span>
+          <span class="digit"> digit.</span>
+        </p>
       </div>
-      <input    class="submit" type="submit" value="Submit" placeholder="Submit" />
-    </form>
+      <div class="form-input">
+        <label for="confirm password">Confirm password</label>
+        <input type="text" formControlName="confirmPassword" />
+      </div>
+      <input [disabled]="!form.valid"  [ngStyle]="{'cursor': (!form.valid? 'not-allowed':'pointer')}" class="submit" type="submit" value="Submit" placeholder="Submit" />
+    </form> 
   </div>
 </div>

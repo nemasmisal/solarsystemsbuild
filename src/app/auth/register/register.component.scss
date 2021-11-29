@@ -11,16 +11,15 @@
     h1 {
         font-size: clamp(1.5em, 3vw, 5em);
     }
-   
 }
 
 .form-title {
     max-width: 200px;
     text-align: center;
     padding: 5px 15px;
-    position: relative;
     color: $footer-background;
-    top: 115px;
+    position: relative;
+    top: 102px;
     left: 613px;
     font-size: 32px;
 }
@@ -42,32 +41,42 @@
                 border-radius: 5px;
                 padding: 0px 10px;
                 position: absolute;
-                bottom: 71px;
+                bottom: 81px;
                 left: 17px;
                 color: white;
-            }          
+            }
+            p {
+                font-size: 11px;
+                color: #c51244;
+                position: absolute;
+                bottom: 23px;
+                left: 10px;
+            }
+            .uppercaseError,.lowercaseError{
+                color: $footer-background;
+            }
             select {
                 margin-top: 30px;
                 background: transparent;
                 border: 0.5px solid $footer-background;
                 width: 490px;
                 height: 52px;
-                margin-bottom: 30px;
+                margin-bottom: 40px;
                 border-radius: 5px;
-            }         
+            }
             & input {
                 outline: none;
                 background: transparent;
                 border: 0.5px solid $footer-background;
                 width: 490px;
-                height: 52px;
-                margin-bottom: 30px;
+                height: 52px;                
+                margin-bottom: 40px;
                 border-radius: 5px;
                 &:hover {
                     border: none;
                     border-radius: 0px;
                     border-bottom: 0.5px solid $footer-background;
-                }               
+                }
             }
         }
         .submit {
@@ -81,6 +90,11 @@
             margin-bottom: 20px;
         }
     }
+
+  
 }
 
+// .digit, .uppercase{
+//     color: $footer-background;
+// }
 
