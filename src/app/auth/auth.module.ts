@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RegisterComponent } from './register/register.component';
 import { RouterModule, Routes } from '@angular/router';
 import {ReactiveFormsModule} from '@angular/forms';
+import {CoreModule} from '../core/core.module';
 
 const components = [RegisterComponent,];
 
@@ -13,6 +14,7 @@ const components = [RegisterComponent,];
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    CoreModule,
     RouterModule.forRoot([
       {path:'register',component:RegisterComponent},
     ])

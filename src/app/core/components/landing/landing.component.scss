@@ -1,0 +1,7 @@
+ .lending {
+    text-align: center;
+    color: white;
+    &-section-header{
+        font-size: clamp(1.5em, 3vw, 5em);
+    }
+}
