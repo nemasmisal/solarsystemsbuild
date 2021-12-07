@@ -30,18 +30,15 @@ nav {
             }
         }
     }
-
-    & .nav-left {
-        &-header {
-            font-family: "Playfair Display", serif;
-            font-weight: bold;
-            font-size: 20px;
-            border-radius: 5px;
+    .nav-left {
+        .logo {
             padding: 10px 20px;
-            cursor: pointer;
-            &:hover {
-                color: $orange-hover;
-                background: #cce8eb;
+            width: 140px;
+            img {
+                display: block;
+                margin-left: 21px;
+                color: white;
+                width: 90%;
             }
         }
     }
