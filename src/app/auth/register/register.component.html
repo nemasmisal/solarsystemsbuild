@@ -3,40 +3,66 @@
   <div class="form-title">Sign up</div>
 
   <div class="form-wrapper">
-    <form  [formGroup]="form" (submit)="register()" >
+    <form #form="ngForm" (submit)="register(form)">
       <div class="form-input">
         <label for="region">Region</label>
-        <select formControlName="region">
+        <select name="select" ngModel>
           <option value="select region">select region :</option>
           <option value="">EU</option>
           <option value="">US</option>
-        </select>        
+        </select>
       </div>
       <div class="form-input">
         <label for="email">Email</label>
-        <input type="text" formControlName="email" />
-        <p *ngIf="f.email?.touched">
-          <span [ngClass]="{'uppercaseError':!email.errors?.uppercaseError}" class="uppercase" >must contain at least one uppercase letter, </span >
+        <input name="email" type="text" ngModel>
+        <!-- <p *ngIf="f.email?.touched">
+          <span [ngClass]="{'uppercaseError':!email.errors?.uppercaseError}" class="uppercase">must contain at least one
+            uppercase letter, </span>
           <span [ngClass]="{'lowercaseError':!email.errors?.lowercaseError}" class="lowercase">lowercase letter, </span>
           <span class="spcial-symbol">special symbol, </span>
           <span class="digit"> digit.</span>
-        </p>
+        </p> -->
       </div>
       <div class="form-input">
         <label for="password">Password</label>
-        <input class="warning" type="text" formControlName="password" />
-        <p *ngIf="password?.dirty">
-          <span  [ngClass]="{'uppercaseError':!password.errors?.uppercaseError}" class="uppercase" >must contain at least one uppercase letter, </span >
-          <span [ngClass]="{'lowercaseError':!password.errors?.lowercaseError}" class="lowercase">lowercase letter, </span>
+        <input name="password" #password="ngModel" [passwordValidator]="password" class="warning" type="password" ngModel>
+        <div class="requirements">
+          <div class="requirements-element">
+            <img class="checkmark" src="assets/icons/check.svg"
+              [ngClass]="{'opacity': !password.errors?.required ? (password.errors | exec: hasOpacity : 'hasEnoughLength') : true }">
+            <p>Min 8 characters</p>
+          </div>
+          <div class="requirements-element">
+            <img class="checkmark" src="assets/icons/check.svg"
+              [ngClass]="{'opacity': !password.errors?.required ? (password.errors | exec: hasOpacity : 'hasMixOfLettersAndNumbers') : true }">
+            <p>A mix of letters and numbers</p>
+          </div>
+          <div class="requirements-element">
+            <img class="checkmark" src="assets/icons/check.svg"
+              [ngClass]="{'opacity': !password.errors?.required ? (password.errors | exec: hasOpacity : 'hasOneUpperCase') : true }">
+            <p>Upper case</p>
+          </div>
+          <div class="requirements-element">
+            <img class="checkmark" src="assets/icons/check.svg"
+              [ngClass]="{'opacity': !password.errors?.required ? (password.errors | exec: hasOpacity : 'hasOneSpecial') : true }">
+            <p>Special characters</p>
+          </div>
+        </div>
+        <!-- <p *ngIf="password?.dirty">
+          <span [ngClass]="{'uppercaseError':!password.errors?.uppercaseError}" class="uppercase">must contain at least
+            one uppercase letter, </span>
+          <span [ngClass]="{'lowercaseError':!password.errors?.lowercaseError}" class="lowercase">lowercase letter,
+          </span>
           <span class="spcial-symbol">special symbol, </span>
           <span class="digit"> digit.</span>
-        </p>
+        </p> -->
       </div>
       <div class="form-input">
         <label for="confirm password">Confirm password</label>
-        <input type="text" formControlName="confirmPassword" />
+        <input name="repeatPassword" type="text" ngModel>
       </div>
-      <input [disabled]="!form.valid"  [ngStyle]="{'cursor': (!form.valid? 'not-allowed':'pointer')}" class="submit" type="submit" value="Submit" placeholder="Submit" />
-    </form> 
+      <button [disabled]="form.invalid" [ngStyle]="{'cursor': (form.invalid? 'not-allowed':'pointer')}" class="submit"
+        type="submit">Submit</button>
+    </form>
   </div>
 </div>

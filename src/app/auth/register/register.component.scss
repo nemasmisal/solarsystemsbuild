@@ -41,7 +41,7 @@
             p {
                 font-size: 11px;
                 color: #c51244;
-                position: absolute;
+                // position: absolute; //Never use tag name like this, better use class on each p
                 bottom: 23px;
                 left: 10px;
             }
@@ -87,6 +87,22 @@
   
 }
 
+.requirements {
+    padding: 0 0px;
+    margin: 27px -8px 33px;
+    &-element {
+      display: flex;
+      align-items: center;
+      img {
+        padding: 0 10px;
+        height: 16px;
+      }
+    }
+  }
+
+.opacity {
+    opacity: 0.2;
+  }
 // .digit, .uppercase{
 //     color: $footer-background;
 // }
