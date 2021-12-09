@@ -33,47 +33,23 @@
             </p>
           </div>
           <div class="requirements-element">
-            <img
-              class="checkmark"
-              src="assets/icons/check.svg"
-              [ngClass]="{'opacity': !password.errors?.required ? (password.errors | exec: hasOpacity:'hasOneUpperCase'): true}"
-            />
+            <img class="checkmark" src="assets/icons/check.svg" [ngClass]="{'opacity': !password.errors?.required ? (password.errors | exec: hasOpacity:'hasOneUpperCase'): true}"/>
             <p [ngClass]="{'change-color': !password.errors?.required ? (password.errors | exec: hasOpacity:'hasOneUpperCase'): true}"
              >Upper case</p>
           </div>
           <div class="requirements-element">
-            <img
-              class="checkmark"
-              src="assets/icons/check.svg"
-              [ngClass]="{
-                'opacity': !password.errors?.required
-                  ? (password.errors | exec: hasOpacity:'hasOneSpecial')
-                  : true
-              }"
-            />
+            <img class="checkmark" src="assets/icons/check.svg" [ngClass]="{'opacity': !password.errors?.required ? (password.errors | exec: hasOpacity:'hasOneSpecial'): true}"/>
             <p [ngClass]="{'change-color': !password.errors?.required ? (password.errors | exec: hasOpacity:'hasOneSpecial'): true}"
             >Special characters</p>
           </div>
-        </div>
-        <!-- <p *ngIf="password?.dirty">
-          <span [ngClass]="{'uppercaseError':!password.errors?.uppercaseError}" class="uppercase">must contain at least
-            one uppercase letter, </span>
-          <span [ngClass]="{'lowercaseError':!password.errors?.lowercaseError}" class="lowercase">lowercase letter,
-          </span>
-          <span class="spcial-symbol">special symbol, </span>
-          <span class="digit"> digit.</span>
-        </p> -->
+        </div> 
       </div>
       <div class="form-input">
         <label for="confirm password">Confirm password</label>
         <input name="repeatPassword" type="text" ngModel />
       </div>
       <button
-        [disabled]="form.invalid"
-        [ngStyle]="{ cursor: form.invalid ? 'not-allowed' : 'pointer' }"
-        class="submit"
-        type="submit"
-      >
+        [disabled]="form.invalid" [ngStyle]="{ cursor: form.invalid ? 'not-allowed' : 'pointer' }" class="submit" type="submit">
         Submit
       </button>
     </form>
