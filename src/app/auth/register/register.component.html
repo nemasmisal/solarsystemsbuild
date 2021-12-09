@@ -14,38 +14,45 @@
       </div>
       <div class="form-input">
         <label for="email">Email</label>
-        <input name="email" type="text" ngModel>
-        <!-- <p *ngIf="f.email?.touched">
-          <span [ngClass]="{'uppercaseError':!email.errors?.uppercaseError}" class="uppercase">must contain at least one
-            uppercase letter, </span>
-          <span [ngClass]="{'lowercaseError':!email.errors?.lowercaseError}" class="lowercase">lowercase letter, </span>
-          <span class="spcial-symbol">special symbol, </span>
-          <span class="digit"> digit.</span>
-        </p> -->
+        <input name="email" type="text" ngModel />     
       </div>
       <div class="form-input">
         <label for="password">Password</label>
-        <input name="password" #password="ngModel" [passwordValidator]="password" class="warning" type="password" ngModel>
-        <div class="requirements">
+        <input name="password" #password="ngModel" [passwordValidator]="password" class="warning" type="password" ngModel/> 
+        <div class="requirements"  [ngClass]="{'vision': (password|disappear: password.dirty)}" >
           <div class="requirements-element">
-            <img class="checkmark" src="assets/icons/check.svg"
-              [ngClass]="{'opacity': !password.errors?.required ? (password.errors | exec: hasOpacity : 'hasEnoughLength') : true }">
-            <p>Min 8 characters</p>
+            <img class="checkmark" src="assets/icons/check.svg" [ngClass]="{ 'opacity': !password.errors?.required ? (password.errors | exec: hasOpacity:'hasEnoughLength') : true }"/>
+            <p [ngClass]="{'change-color': !password.errors?.required ? (password.errors | exec: hasOpacity:'hasEnoughLength') : true }" >
+              Min 8 characters
+            </p>
           </div>
           <div class="requirements-element">
-            <img class="checkmark" src="assets/icons/check.svg"
-              [ngClass]="{'opacity': !password.errors?.required ? (password.errors | exec: hasOpacity : 'hasMixOfLettersAndNumbers') : true }">
-            <p>A mix of letters and numbers</p>
+            <img class="checkmark" src="assets/icons/check.svg" [ngClass]="{ opacity: !password.errors?.required ? (password.errors | exec: hasOpacity:'hasMixOfLettersAndNumbers') : true }"/>
+            <p [ngClass]="{ 'change-color': !password.errors?.required ? (password.errors | exec: hasOpacity:'hasMixOfLettersAndNumbers') : true }" >
+              A mix of letters and numbers
+            </p>
           </div>
           <div class="requirements-element">
-            <img class="checkmark" src="assets/icons/check.svg"
-              [ngClass]="{'opacity': !password.errors?.required ? (password.errors | exec: hasOpacity : 'hasOneUpperCase') : true }">
-            <p>Upper case</p>
+            <img
+              class="checkmark"
+              src="assets/icons/check.svg"
+              [ngClass]="{'opacity': !password.errors?.required ? (password.errors | exec: hasOpacity:'hasOneUpperCase'): true}"
+            />
+            <p [ngClass]="{'change-color': !password.errors?.required ? (password.errors | exec: hasOpacity:'hasOneUpperCase'): true}"
+             >Upper case</p>
           </div>
           <div class="requirements-element">
-            <img class="checkmark" src="assets/icons/check.svg"
-              [ngClass]="{'opacity': !password.errors?.required ? (password.errors | exec: hasOpacity : 'hasOneSpecial') : true }">
-            <p>Special characters</p>
+            <img
+              class="checkmark"
+              src="assets/icons/check.svg"
+              [ngClass]="{
+                'opacity': !password.errors?.required
+                  ? (password.errors | exec: hasOpacity:'hasOneSpecial')
+                  : true
+              }"
+            />
+            <p [ngClass]="{'change-color': !password.errors?.required ? (password.errors | exec: hasOpacity:'hasOneSpecial'): true}"
+            >Special characters</p>
           </div>
         </div>
         <!-- <p *ngIf="password?.dirty">
@@ -59,10 +66,16 @@
       </div>
       <div class="form-input">
         <label for="confirm password">Confirm password</label>
-        <input name="repeatPassword" type="text" ngModel>
+        <input name="repeatPassword" type="text" ngModel />
       </div>
-      <button [disabled]="form.invalid" [ngStyle]="{'cursor': (form.invalid? 'not-allowed':'pointer')}" class="submit"
-        type="submit">Submit</button>
+      <button
+        [disabled]="form.invalid"
+        [ngStyle]="{ cursor: form.invalid ? 'not-allowed' : 'pointer' }"
+        class="submit"
+        type="submit"
+      >
+        Submit
+      </button>
     </form>
   </div>
 </div>

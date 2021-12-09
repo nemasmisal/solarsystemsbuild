@@ -38,16 +38,7 @@
                 left: 17px;
                 color: white;
             }
-            p {
-                font-size: 11px;
-                color: #c51244;
-                // position: absolute; //Never use tag name like this, better use class on each p
-                bottom: 23px;
-                left: 10px;
-            }
-            .uppercaseError,.lowercaseError{
-                color: $footer-background;
-            }
+
             select {
                 margin-top: 30px;
                 background: transparent;
@@ -62,14 +53,43 @@
                 background: transparent;
                 border: 0.5px solid $footer-background;
                 width: 490px;
-                height: 52px;                
-                margin-bottom: 40px;
+                height: 52px;
+                margin-bottom: 44px;
                 border-radius: 5px;
                 &:hover {
                     border: none;
                     border-radius: 0px;
                     border-bottom: 0.5px solid $footer-background;
                 }
+            }
+            .requirements {
+                padding: 0 0px;
+                margin: 27px -8px 33px;
+                @include flex(row, wrap, center, center);
+                position: absolute;
+                top: 30px;
+                left: 5px;
+                &-element {
+                    @include flex(row, wrap, center, center);
+                    font-size: 11px;
+                    bottom: 23px;
+                    left: 10px;
+                    color: $footer-background;
+                    img {
+                        height: 16px;
+                    }
+                }
+
+                .opacity {
+                    opacity: 0.2;
+                }
+
+                .change-color {
+                    color: #9b042e;
+                }
+            }
+            .vision {
+                visibility: hidden;
             }
         }
         .submit {
@@ -83,27 +103,5 @@
             margin-bottom: 20px;
         }
     }
-
-  
 }
-
-.requirements {
-    padding: 0 0px;
-    margin: 27px -8px 33px;
-    &-element {
-      display: flex;
-      align-items: center;
-      img {
-        padding: 0 10px;
-        height: 16px;
-      }
-    }
-  }
-
-.opacity {
-    opacity: 0.2;
-  }
-// .digit, .uppercase{
-//     color: $footer-background;
-// }
 

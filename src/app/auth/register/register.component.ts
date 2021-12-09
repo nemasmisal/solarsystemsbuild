@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FormGroup,FormBuilder, Validators, FormControl, NgForm} from '@angular/forms';
-import {uppercaseValidator,lowercaseValidator} from '../../shared/validator/valid-uppercase';
+import {NgForm} from '@angular/forms';
+
 
 @Component({
   selector: 'app-register',
@@ -8,47 +8,8 @@ import {uppercaseValidator,lowercaseValidator} from '../../shared/validator/vali
   styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent {
-  // form = this.fb.group({
-  //   region: ['Select region'],
-  //   email: [
-  //     '',
-  //     {
-  //       validators: [
-  //         Validators.required,
-  //         uppercaseValidator(),
-  //         lowercaseValidator(),
-  //       ],
-  //       asyncValidators: [],
-  //       updateOn: 'blur',
-  //     },
-  //   ],
-  //   password: [
-  //     '',
-  //     {
-  //       validators: [
-  //         Validators.required,
-  //         uppercaseValidator(),
-  //         lowercaseValidator(),
-  //       ],
-  //       updateOn: 'blur',
-  //     },
-  //   ],
 
-  //   confirmPassword: [''],
-  // });
-
-  constructor() {}
-
-  // get f() {
-  //   return this.form.controls;
-  // }
-
-  // get email() {
-  //   return this.form.controls['email'];
-  // }
-  // get password() {
-  //   return this.form.controls['password'];
-  // }
+  constructor() {} 
 
   register(form: NgForm) {
     const formDate = form.value;
