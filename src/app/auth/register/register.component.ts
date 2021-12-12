@@ -7,20 +7,30 @@ import {NgForm, NgModel} from '@angular/forms';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
 })
-export class RegisterComponent { 
+export class RegisterComponent {
+
+  emailRegex =
+    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
   @ViewChild('form')
-  registerForm!:NgForm;
+  registerForm!: NgForm;
 
-  constructor() {} 
+  constructor() {}
 
   register(form: NgForm) {
-    const formDate = form.value;    
+    const formDate = form.value;
     this.registerForm.reset();
   }
 
   hasOpacity(obj: any, propertyName: string): boolean {
-    if (obj === null || Array.isArray(obj) || typeof obj !== 'object' || !obj.hasOwnProperty(propertyName)) { return false; }
+    if (
+      obj === null ||
+      Array.isArray(obj) ||
+      typeof obj !== 'object' ||
+      !obj.hasOwnProperty(propertyName)
+    ) {
+      return false;
+    }
     return true;
   }
 }

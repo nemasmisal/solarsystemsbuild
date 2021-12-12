@@ -15,7 +15,17 @@
       </div>
       <div class="form-input">
         <label for="email">Email</label>
-        <input name="email" type="text" required ngModel />
+        <input name="email" type="text" [pattern]="emailRegex" #email='ngModel' required ngModel />
+         <div class="requirements">          
+          <div
+            class="requirements-element"           
+            *ngIf="email.errors?.pattern">
+            <img class="do-not-match-icon" src="assets/icons/do-not-dry-svgrepo-com.svg" />
+            <p class="requirements-text"  >
+              Enter valid email address, please!
+            </p>
+          </div>
+        </div>
       </div>
       <div class="form-input">
         <label for="password">Password</label>
@@ -129,7 +139,7 @@
             class="requirements-element"
             *ngIf="repeatPassword.errors?.confirmPassword">
             <img class="do-not-match-icon" src="assets/icons/do-not-dry-svgrepo-com.svg" />
-            <p class="requirements-text-repeat">
+            <p class="requirements-text">
               The password confirmation does not match!
             </p>
           </div>

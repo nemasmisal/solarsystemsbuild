@@ -62,8 +62,7 @@
                     border-bottom: 0.5px solid $footer-background;
                 }
             }
-            & .requirements {
-                padding: 0 0px;
+            & .requirements {               
                 margin: 27px -8px 33px;
                 @include flex(row, wrap, center, center);
                 position: absolute;
@@ -78,18 +77,20 @@
                     .checkmark, .do-not-match-icon {
                         height: 16px;
                     }
-                    .do-not-match-icon {
-                        max-width: 3%;                       
+                    .do-not-match-icon {                       
+                       max-width: 10px;   
+                       margin-left: 10px;                  
                     }
                 }
-                &-text-repeat{
+                &-text{
                      color: #9b042e;
-                     margin-left: 5px;
+                     margin-left: 4px;
                 }
 
                 .opacity {
                     opacity: 0.2;
                 }
+                
 
                 .change-color {
                     color: #9b042e;
@@ -112,3 +113,6 @@
     }
 }
 
+.green{
+    color: $footer-background;
+}
