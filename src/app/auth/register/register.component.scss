@@ -62,7 +62,7 @@
                     border-bottom: 0.5px solid $footer-background;
                 }
             }
-            .requirements {
+            & .requirements {
                 padding: 0 0px;
                 margin: 27px -8px 33px;
                 @include flex(row, wrap, center, center);
@@ -75,9 +75,16 @@
                     bottom: 23px;
                     left: 10px;
                     color: $footer-background;
-                    img {
+                    .checkmark, .do-not-match-icon {
                         height: 16px;
                     }
+                    .do-not-match-icon {
+                        max-width: 3%;                       
+                    }
+                }
+                &-text-repeat{
+                     color: #9b042e;
+                     margin-left: 5px;
                 }
 
                 .opacity {

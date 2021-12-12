@@ -15,7 +15,7 @@ export class PasswordValidatorDirective {
   @Input() passwordValidator!: NgModel;
 
   validate(control: AbstractControl): ValidationErrors | null {
-    const password = control.value;
+    const password = control.value;  
 
     const errors: { [key: string]: boolean | undefined } = {};
 

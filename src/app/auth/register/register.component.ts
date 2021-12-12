@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {NgForm} from '@angular/forms';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import {NgForm, NgModel} from '@angular/forms';
 
 
 @Component({
@@ -7,14 +7,16 @@ import {NgForm} from '@angular/forms';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
 })
-export class RegisterComponent {
+export class RegisterComponent { 
+
+  @ViewChild('form')
+  registerForm!:NgForm;
 
   constructor() {} 
 
   register(form: NgForm) {
-    const formDate = form.value;
-    console.log('FORM VALID:', form.valid);
-    
+    const formDate = form.value;    
+    this.registerForm.reset();
   }
 
   hasOpacity(obj: any, propertyName: string): boolean {
