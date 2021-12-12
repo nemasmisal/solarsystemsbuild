@@ -1,0 +1,118 @@
+@import "../../../styles.scss";
+@import "../../../variables";
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap");
+
+.main {
+    height: 800px;
+}
+
+.form-title {
+    max-width: 200px;
+    text-align: center;
+    padding: 5px 15px;
+    color: $footer-background;
+    position: relative;
+    top: 102px;
+    left: 613px;
+    font-size: 32px;
+}
+
+.form-wrapper {
+    background: lavender;
+    width: 1450px;
+    height: 600px;
+    @include flex(row, wrap, center, center);
+    form {
+        border: 0.5px solid $footer-background;
+        border-radius: 5px;
+        padding: 40px;
+        padding-bottom: 10px;
+        .form-input {
+            position: relative;
+            label {
+                background: $footer-background;
+                border-radius: 5px;
+                padding: 0px 10px;
+                position: absolute;
+                bottom: 81px;
+                left: 17px;
+                color: white;
+            }
+
+            select {
+                margin-top: 30px;
+                background: transparent;
+                border: 0.5px solid $footer-background;
+                width: 490px;
+                height: 52px;
+                margin-bottom: 40px;
+                border-radius: 5px;
+            }
+            & input {
+                outline: none;
+                background: transparent;
+                border: 0.5px solid $footer-background;
+                width: 490px;
+                height: 52px;
+                margin-bottom: 44px;
+                border-radius: 5px;
+                &:hover {
+                    border: none;
+                    border-radius: 0px;
+                    border-bottom: 0.5px solid $footer-background;
+                }
+            }
+            & .requirements {               
+                margin: 27px -8px 33px;
+                @include flex(row, wrap, center, center);
+                position: absolute;
+                top: 30px;
+                left: 5px;
+                &-element {
+                    @include flex(row, wrap, center, center);
+                    font-size: 11px;
+                    bottom: 23px;
+                    left: 10px;
+                    color: $footer-background;
+                    .checkmark, .do-not-match-icon {
+                        height: 16px;
+                    }
+                    .do-not-match-icon {                       
+                       max-width: 10px;   
+                       margin-left: 10px;                  
+                    }
+                }
+                &-text{
+                     color: #9b042e;
+                     margin-left: 4px;
+                }
+
+                .opacity {
+                    opacity: 0.2;
+                }
+                
+
+                .change-color {
+                    color: #9b042e;
+                }
+            }
+            .vision {
+                visibility: hidden;
+            }
+        }
+        .submit {
+            text-align: center;
+            color: white;
+            font-size: 18px;
+            background: $footer-background;
+            border: none;
+            height: 45px;
+            width: 490px;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.green{
+    color: $footer-background;
+}

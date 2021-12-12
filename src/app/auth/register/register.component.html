@@ -1,0 +1,158 @@
+<div class="main">
+  <app-landing></app-landing>
+  <div class="form-title">Sign up</div>
+
+  <div class="form-wrapper">
+    <form #form="ngForm" (submit)="register(form)">
+      <!-- <pre>{{ form.value | json }}</pre> -->
+      <div class="form-input">
+        <label for="region">Region</label>
+        <select name="region" ngModel>
+          <option disabled>select region :</option>
+          <option value="EU">EU</option>
+          <option value="US">US</option>
+        </select>
+      </div>
+      <div class="form-input">
+        <label for="email">Email</label>
+        <input name="email" type="text" [pattern]="emailRegex" #email='ngModel' required ngModel />
+         <div class="requirements">          
+          <div
+            class="requirements-element"           
+            *ngIf="email.errors?.pattern">
+            <img class="do-not-match-icon" src="assets/icons/do-not-dry-svgrepo-com.svg" />
+            <p class="requirements-text"  >
+              Enter valid email address, please!
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="form-input">
+        <label for="password">Password</label>
+        <input
+          name="password"
+          #password="ngModel"
+          [passwordValidator]="password"
+          class="warning"
+          type="password"
+          ngModel
+        />
+        <div
+          class="requirements"
+          [ngClass]="{ vision: (password | disappear: password.dirty) }"
+        >
+          <div class="requirements-element">
+            <img
+              class="checkmark"
+              src="assets/icons/check.svg"
+              [ngClass]="{
+                opacity: !password.errors?.required
+                  ? (password.errors | exec: hasOpacity:'hasEnoughLength')
+                  : true
+              }"
+            />
+            <p
+              [ngClass]="{
+                'change-color': !password.errors?.required
+                  ? (password.errors | exec: hasOpacity:'hasEnoughLength')
+                  : true
+              }"
+            >
+              Min 8 characters
+            </p>
+          </div>
+          <div class="requirements-element">
+            <img
+              class="checkmark"
+              src="assets/icons/check.svg"
+              [ngClass]="{
+                opacity: !password.errors?.required
+                  ? (password.errors
+                    | exec: hasOpacity:'hasMixOfLettersAndNumbers')
+                  : true
+              }"
+            />
+            <p
+              [ngClass]="{
+                'change-color': !password.errors?.required
+                  ? (password.errors
+                    | exec: hasOpacity:'hasMixOfLettersAndNumbers')
+                  : true
+              }"
+            >
+              A mix of letters and numbers
+            </p>
+          </div>
+          <div class="requirements-element">
+            <img
+              class="checkmark"
+              src="assets/icons/check.svg"
+              [ngClass]="{
+                opacity: !password.errors?.required
+                  ? (password.errors | exec: hasOpacity:'hasOneUpperCase')
+                  : true
+              }"
+            />
+            <p
+              [ngClass]="{
+                'change-color': !password.errors?.required
+                  ? (password.errors | exec: hasOpacity:'hasOneUpperCase')
+                  : true
+              }"
+            >
+              Upper case
+            </p>
+          </div>
+          <div class="requirements-element">
+            <img
+              class="checkmark"
+              src="assets/icons/check.svg"
+              [ngClass]="{
+                opacity: !password.errors?.required
+                  ? (password.errors | exec: hasOpacity:'hasOneSpecial')
+                  : true
+              }"
+            />
+            <p
+              [ngClass]="{
+                'change-color': !password.errors?.required
+                  ? (password.errors | exec: hasOpacity:'hasOneSpecial')
+                  : true
+              }"
+            >
+              Special characters
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="form-input">
+        <label for="confirm password">Confirm password</label>
+        <input
+          name="repeatPassword"
+          #repeatPassword="ngModel"
+          repeatValidator
+          type="text"
+          ngModel
+        />
+        <div class="requirements">
+          <div
+            class="requirements-element"
+            *ngIf="repeatPassword.errors?.confirmPassword">
+            <img class="do-not-match-icon" src="assets/icons/do-not-dry-svgrepo-com.svg" />
+            <p class="requirements-text">
+              The password confirmation does not match!
+            </p>
+          </div>
+        </div>
+      </div>
+      <button
+        [disabled]="form.invalid"
+        [ngStyle]="{ cursor: form.invalid ? 'not-allowed' : 'pointer' }"
+        class="submit"
+        type="submit"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
