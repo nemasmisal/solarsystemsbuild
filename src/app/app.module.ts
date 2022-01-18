@@ -6,11 +6,10 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { CommonModule } from '@angular/common';
-import {AuthModule} from './auth/auth.module';
-import { TimerComponent } from './timer/timer.component'
+import {AuthModule} from './auth/auth.module'
 
 @NgModule({
-  declarations: [AppComponent, TimerComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
